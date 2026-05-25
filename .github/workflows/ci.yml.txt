@@ -7,7 +7,7 @@ on:
 
 jobs:
 
-  build-user-service:
+  build-user:
 
     runs-on: ubuntu-latest
 
@@ -27,7 +27,7 @@ jobs:
           cd user
           mvn clean install -DskipTests
 
-  build-product-service:
+  build-Product:
 
     runs-on: ubuntu-latest
 
