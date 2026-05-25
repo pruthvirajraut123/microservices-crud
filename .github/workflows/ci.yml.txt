@@ -11,6 +11,10 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: user
+
     steps:
 
       - name: Checkout Code
@@ -23,13 +27,15 @@ jobs:
           java-version: '17'
 
       - name: Build User Service
-        run: |
-          cd user
-          mvn clean install -DskipTests
+        run: mvn clean install -DskipTests
 
-  build-Product:
+  build-product:
 
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: Product
 
     steps:
 
@@ -43,6 +49,4 @@ jobs:
           java-version: '17'
 
       - name: Build Product Service
-        run: |
-          cd Product
-          mvn clean install -DskipTests
+        run: mvn clean install -DskipTests
